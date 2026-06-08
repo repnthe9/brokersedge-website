@@ -1,0 +1,12 @@
+npx create-next-app@latest brokersedge-tms --typescript --app
+cd brokersedge-tms
+npm install @supabase/supabase-js @supabase/auth-helpers-nextjs
+- `lib/supabase.ts` → `lib/supabase.ts`
+- `types/database.ts` → `types/database.ts`
+- `middleware/middleware.ts` → `middleware.ts` ← (in the root, NOT in middleware/)
+- `app/login/page.tsx` → `app/login/page.tsx`
+- `app/dashboard/layout.tsx` → `app/dashboard/layout.tsx`
+- `app/dashboard/page.tsx` → `app/dashboard/page.tsx`
+- `app/dashboard/dispatch/page.tsx` → `app/dashboard/dispatch/page.tsx`
+- `app/dashboard/dispatch/loads/new/page.tsx` → `app/dashboard/dispatch/loads/new/page.tsx`
+- `app/api/auth/signout/route.ts` → `app/api/auth/signout/route.ts`
