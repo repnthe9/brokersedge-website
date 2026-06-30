@@ -11,7 +11,6 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', () => nav && nav.classList.remove('open'));
 });
 
-document.querySelector('.lead-form')?.addEventListener('submit', event => {
-  event.preventDefault();
-  alert('Demo request captured. Connect this form to your CRM or email service next.');
-});
+// Form now posts directly to Formspree (see index.html action attribute) --
+// no JS interception needed. Formspree handles the actual page redirect
+// after submission.
