@@ -379,3 +379,27 @@ h1,h2,h3{letter-spacing:-.035em}
 .ls-step.active .ls-dot{background:#005fee;border:3px solid #e8f4ff;box-shadow:0 0 0 2px #005fee33}
 .ls-step.active p{color:#005fee;font-weight:800}
 @media(max-width:520px){.ls-step p{font-size:8px}}
+
+/* Driver app section */
+.driver-grid{display:grid;grid-template-columns:380px 1fr;gap:70px;align-items:center}
+.dphone{width:340px;margin:0 auto;background:#f4f7fb;border:10px solid #1b2430;border-radius:38px;box-shadow:12px 12px 0 #00b4d8;padding:30px 14px 18px;color:#0b0f14;position:relative}
+.dp-notch{position:absolute;top:8px;left:50%;width:90px;height:20px;background:#1b2430;border-radius:12px;transform:translateX(-50%)}
+.dp-head{display:flex;align-items:center;gap:10px;background:#fff;border-radius:10px;padding:10px 12px;margin-bottom:10px}
+.dp-back{font-size:26px;color:#5b6b7c;line-height:1}
+.dp-head b{display:block;font-size:16px}.dp-head small{color:#5b6b7c;font-size:12px}
+.dp-steps{display:flex;justify-content:space-between;background:#fff;border-radius:10px;padding:10px 6px;margin-bottom:10px}
+.dp-steps span{flex:1;text-align:center;font-size:11px;font-weight:800;color:#8fa0b2}
+.dp-steps span em{display:block;font-style:normal;font-weight:600;font-size:8px;margin-top:2px}
+.dp-steps .on{color:#16a34a}.dp-steps .cur{color:#005fee}
+.dp-live{background:#eafaf0;border:1.5px solid #86d9a5;border-radius:10px;padding:10px 12px;margin-bottom:10px}
+.dp-live b{color:#16a34a;font-size:14px;display:block}.dp-live small{color:#5b6b7c;font-size:11px}
+.dp-card{background:#fff;border-radius:10px;padding:12px;margin-bottom:10px;border:1px solid #e3eaf2}
+.dp-row{display:flex;align-items:center;gap:8px}.dp-row small{margin-left:auto;color:#5b6b7c;font-size:11px}
+.dp-row i{width:9px;height:9px;border-radius:50%}.dp-row i.g{background:#22c55e}.dp-row i.r{background:#ef4444}
+.dp-card p{margin:8px 0;font-weight:800;font-size:17px}
+.dp-btns{display:flex;gap:8px}.dp-btns span{flex:1;text-align:center;padding:9px;border-radius:8px;font-size:13px;font-weight:800}
+.dp-btns .nav{background:#e6efff;color:#005fee;border:1px solid #b8cffb}.dp-btns .call{background:#eafaf0;color:#16a34a;border:1px solid #86d9a5}
+.drv-list{list-style:none;padding:0;margin:24px 0 30px;display:grid;gap:14px}
+.drv-list li{padding:14px 18px;background:#121923;border-left:5px solid #00b4d8;border-radius:4px;color:#cfe0f2;line-height:1.55}
+.drv-list li b{color:#fff}
+@media(max-width:900px){.driver-grid{grid-template-columns:1fr;gap:40px}}
