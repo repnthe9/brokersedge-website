@@ -63,7 +63,7 @@ if (live) {
 (function(){
   const tabs=[...document.querySelectorAll('.tour-tab')], slides=[...document.querySelectorAll('.tour-slide')];
   if(!tabs.length) return;
-  const caps=["Book, filter and manage every load from one board", "See every truck on the map, live", "Invoice customers and pay carriers without leaving the TMS", "Onboard, pay and keep every carrier organized", "Run the reports your brokerage actually needs", "See every pickup and delivery on one shipment calendar"], cap=document.getElementById('tourCap');
+  const caps=["Your whole operation at a glance, the moment you log in", "Book, filter and manage every load from one board", "See every truck on the map, live", "Invoice customers and pay carriers without leaving the TMS", "Onboard, pay and keep every carrier organized", "Run the reports your brokerage actually needs", "See every pickup and delivery on one shipment calendar"], cap=document.getElementById('tourCap');
   let cur=0;
   function go(i){
     cur=(i+tabs.length)%tabs.length;
