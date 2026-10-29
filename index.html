@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BrokersEdge TMS | Freight Brokerage & Carrier TMS</title>
-  <meta name="description" content="BrokersEdge TMS is a modern transportation management system built for freight brokerages, carriers, owner operators, dispatch teams, and accounting operations." />
+  <meta name="description" content="BrokersEdge TMS runs your brokerage, carriers, dispatch and accounting in one platform. Live tracking with speed and ETA, automatic LTL carrier tracking, factoring-aware carrier pay and one-click remittance." />
   <link rel="canonical" href="https://www.brokersedgetms.com/" />
   <link rel="icon" type="image/png" href="assets/brokersedge-logo-mark.png" />
   <link rel="apple-touch-icon" href="assets/brokersedge-logo-mark.png" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="BrokersEdge TMS" />
   <meta property="og:title" content="BrokersEdge TMS | Freight Brokerage & Carrier TMS" />
@@ -17,8 +16,6 @@
   <meta property="og:url" content="https://www.brokersedgetms.com/" />
   <meta property="og:image" content="https://www.brokersedgetms.com/assets/new-dashboard.png" />
   <meta property="og:image:alt" content="BrokersEdge TMS dashboard interface preview" />
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="BrokersEdge TMS | Freight Brokerage & Carrier TMS" />
   <meta name="twitter:description" content="Run your brokerage, carrier network, dispatch, and accounting from one modern TMS." />
@@ -26,8 +23,6 @@
 
   <link rel="stylesheet" href="styles.css" />
 
-  <!-- Structured data: helps Google understand what BrokersEdge TMS is and
-       show rich results (ratings, pricing, FAQ) once reviews/listings exist. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -39,11 +34,11 @@
     "description": "BrokersEdge TMS is an all-in-one transportation management system for freight brokerages, carrier networks, dispatch teams, and accounting operations -- combining load management, tender acceptance, shipment tracking, documents, and accounting in one platform.",
     "url": "https://www.brokersedgetms.com/",
     "image": "https://www.brokersedgetms.com/assets/new-dashboard.png",
-    "offers": {
-      "@type": "Offer",
-      "url": "https://app.brokersedgetms.com/signup",
-      "category": "Free Trial"
-    },
+    "offers": [
+      {"@type":"Offer","name":"Starter","price":"150","priceCurrency":"USD","url":"https://app.brokersedgetms.com/signup"},
+      {"@type":"Offer","name":"Growth","price":"400","priceCurrency":"USD","url":"https://app.brokersedgetms.com/signup"},
+      {"@type":"Offer","name":"Scale","price":"950","priceCurrency":"USD","url":"https://app.brokersedgetms.com/signup"}
+    ],
     "publisher": {
       "@type": "Organization",
       "name": "BrokersEdge TMS",
@@ -61,10 +56,10 @@
       </a>
       <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
       <div class="nav-links" data-nav>
-        <a href="#platform">Platform</a>
-        <a href="#features">Features</a>
-        <a href="#workflow">Workflow</a>
-        <a href="#dashboards">Dashboards</a>
+        <a href="#edge">Why Us</a>
+        <a href="#tour">Product Tour</a>
+        <a href="#tracking">Tracking</a>
+        <a href="#pricing">Pricing</a>
         <a href="/resources/">Resources</a>
         <a href="#contact">Contact</a>
         <a class="login" href="https://app.brokersedgetms.com/login">Log in</a>
@@ -74,108 +69,256 @@
   </header>
 
   <main>
-    <section class="hero section-pad">
+    <!-- HERO -->
+    <section class="hero section-pad" style="padding-top:80px">
       <div class="hero-bg"></div>
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">All-in-one transportation management system</p>
-          <h1>Run your brokerage, carrier network, dispatch, and accounting from one modern TMS.</h1>
-          <p class="hero-text">BrokersEdge TMS gives freight teams one clean place to build loads, accept tenders, dispatch carriers, track shipments, manage documents, and protect margin.</p>
+        <div>
+          <div class="hero-pill"><span class="dot"></span> Live tracking · LTL portals · Factoring-ready pay</div>
+          <h1>Book it. Track it. <span class="grad">Get paid.</span><br/>One TMS. Zero spreadsheets.</h1>
+          <p class="hero-text">BrokersEdge runs your brokerage, your carriers, dispatch and accounting in one place. Loads move themselves from booked to paid: LTL status pulled from the carrier, live GPS with speed and ETA for customers, and carrier pay that already knows who factors.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">Request Demo</a>
-            <a class="btn btn-secondary" href="https://app.brokersedgetms.com/signup">Start Free Trial →</a>
+            <a class="btn btn-primary btn-lg pulse" href="https://app.brokersedgetms.com/signup">Start Free Trial →</a>
+            <a class="btn btn-secondary btn-lg" href="#contact">Book a Demo</a>
           </div>
           <div class="hero-stats" aria-label="Platform highlights">
-            <div><strong>Carrier + Broker</strong><span>Friendly workflow</span></div>
-            <div><strong>API Tender</strong><span>Acceptance ready</span></div>
-            <div><strong>Margin First</strong><span>Revenue visibility</span></div>
+            <div><b data-count="30" data-suffix=" min">0</b><span>LTL carrier status refresh</span></div>
+            <div><b data-count="2">0</b><span>Factoring partners built in</span></div>
+            <div><b data-count="1">0</b><span>Platform for the whole load</span></div>
           </div>
         </div>
-        <div class="product-frame" aria-label="BrokersEdge TMS dashboard preview">
-          <div class="browser-bar"><span></span><span></span><span></span></div>
-          <img src="assets/new-dashboard.png" alt="BrokersEdge TMS main dashboard interface preview" />
+
+        <div class="live" id="heroLive" aria-hidden="true">
+          <div class="load-card">
+            <div class="lc-top"><span class="lc-id">C5-1002847</span><span class="lc-badge" id="lcBadge">Booked</span></div>
+            <div class="lc-lane">Dallas, TX → Atlanta, GA · Dry Van · 782 mi</div>
+            <div class="steps" id="lcSteps">
+              <div class="step on"><i></i>Booked</div><div class="bar"><b></b></div>
+              <div class="step"><i></i>Dispatched</div><div class="bar"><b></b></div>
+              <div class="step"><i></i>In Transit</div><div class="bar"><b></b></div>
+              <div class="step"><i></i>Delivered</div>
+            </div>
+            <div class="lc-grid">
+              <div class="lc-cell"><small>Customer</small><b>$2,450</b></div>
+              <div class="lc-cell"><small>Carrier</small><b>$1,980</b></div>
+              <div class="lc-cell"><small>Margin</small><b style="color:#6ee7a0">$470</b></div>
+            </div>
+          </div>
+          <div class="float f1" data-at="1"><span class="ic">📦</span><div>LTL booked via SAIA<small>PRO assigned automatically</small></div></div>
+          <div class="float f2" data-at="2"><span class="ic">📍</span><div>Live ping · 62 mph<small>ETA 4:15 PM, updated 1 min ago</small></div></div>
+          <div class="float f3" data-at="3"><span class="ic">📄</span><div>POD pulled automatically<small>Attached to the load</small></div></div>
+          <div class="float f4" data-at="3"><span class="ic">💸</span><div>Carrier paid by ACH<small>Remittance sent with your MC#</small></div></div>
         </div>
       </div>
     </section>
 
-    <section class="trust-strip">
-      <div class="container trust-grid">
-        <div><strong>Built for freight teams</strong><span>Brokerage, carrier, owner operator, and accounting workflows.</span></div>
-        <div><strong>156+</strong><span>Loads visible in one board</span></div>
-        <div><strong>30-day</strong><span>Customer revenue reporting</span></div>
-        <div><strong>24/7</strong><span>Operational visibility</span></div>
-      </div>
-    </section>
+    <div class="marquee" aria-hidden="true"><div class="marquee-track">
+      <span>Live GPS tracking</span><span>SAIA &amp; TForce portal tracking</span><span>Tender acceptance</span><span>Factoring-aware carrier pay</span><span>RTS &amp; Denim</span><span>ACH pay runs</span><span>Remittance emails</span><span>Driver app</span><span>Customer tracking links</span><span>Brokerage + own trucks</span>
+      <span>Live GPS tracking</span><span>SAIA &amp; TForce portal tracking</span><span>Tender acceptance</span><span>Factoring-aware carrier pay</span><span>RTS &amp; Denim</span><span>ACH pay runs</span><span>Remittance emails</span><span>Driver app</span><span>Customer tracking links</span><span>Brokerage + own trucks</span>
+    </div></div>
 
-    <section class="section-pad light" id="platform">
+    <!-- DIFFERENTIATORS -->
+    <section class="section-pad dark-panel" id="edge">
       <div class="container center-copy">
-        <p class="eyebrow">One platform. Every load.</p>
-        <h2>Designed around how freight actually moves.</h2>
-        <p>BrokersEdge TMS connects load creation, dispatch, tender acceptance, shipment tracking, compliance, documents, billing, and reporting into one user-friendly system.</p>
+        <p class="eyebrow reveal">Why BrokersEdge</p>
+        <h2 class="reveal">Built by a brokerage that runs freight every day</h2>
+        <p class="lead reveal">Most TMS tools stop at the load board. We kept going: tracking your customers actually enjoy, and money movement that matches how carriers really get paid.</p>
       </div>
-      <div class="container feature-grid">
-        <article class="feature-card"><div class="icon">📦</div><h3>Load Management</h3><p>Build new loads with customer, pickup, delivery, equipment, product, PO, miles, revenue, carrier rate, and gross margin.</p></article>
-        <article class="feature-card"><div class="icon">🚚</div><h3>Dispatch Board</h3><p>Manage owner operators, company trucks, unassigned assets, driver queues, and pending assignments.</p></article>
-        <article class="feature-card"><div class="icon">🔗</div><h3>Tender Acceptance</h3><p>Dedicated API load acceptance and tender document menus for faster customer freight intake.</p></article>
-        <article class="feature-card"><div class="icon">📍</div><h3>Tracking</h3><p>Track pickup, in-transit, at-delivery, delivered, empty, critical, caution, and running-late freight.</p></article>
-        <article class="feature-card"><div class="icon">📄</div><h3>Documents</h3><p>Store PODs, BOLs, rate confirmations, invoices, carrier packets, receipts, and scale tickets.</p></article>
-        <article class="feature-card"><div class="icon">💰</div><h3>Accounting</h3><p>Receivables, payables, on-hold carrier payments, aging reports, driver pay, and invoice controls.</p></article>
-      </div>
-    </section>
-
-    <section class="section-pad dark-panel" id="features">
-      <div class="container split-grid">
-        <div>
-          <p class="eyebrow">Smarter operations</p>
-          <h2>Load board built for speed, accuracy, and margin control.</h2>
-          <p>Your loads screen separates pickup and delivery date/time, includes sortable columns, and keeps the financials visible without forcing your team to open every shipment.</p>
-          <ul class="check-list">
-            <li>Load #, status, customer, carrier, PO, product, equipment, miles</li>
-            <li>Pickup city/state/date/time and delivery city/state/date/time</li>
-            <li>Customer revenue, carrier rate, and gross margin</li>
-            <li>Saved views, filters, exports, and column controls</li>
-          </ul>
-          <a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a>
-        </div>
-        <div class="product-frame compact">
-          <div class="browser-bar"><span></span><span></span><span></span></div>
-          <img src="assets/load-board-ui.png" alt="BrokersEdge TMS load board interface preview" />
-        </div>
+      <div class="container diff">
+        <article class="feature-card reveal"><div class="icon">🚚</div><h3>LTL tracking on autopilot</h3><p>Connect SAIA and TForce and the load status follows the carrier's own steps: picked up, in transit, delivered. No more calling terminals or refreshing portals.</p><span class="tag">Auto-refreshes every 30 min</span></article>
+        <article class="feature-card reveal" data-d="1"><div class="icon">📍</div><h3>Tracking links customers love</h3><p>Send one link. Customers see the last ping time, current speed and a live ETA built from real driving pace and traffic, not a guess.</p><span class="tag">Speed + live ETA</span></article>
+        <article class="feature-card reveal" data-d="2"><div class="icon">🏦</div><h3>Factoring-aware carrier pay</h3><p>Link a carrier to its factoring company once. Pay runs route to the right remit-to emails, multiple per factor, and the due-date countdown disappears on factored loads.</p><span class="tag">RTS · Denim</span></article>
+        <article class="feature-card reveal" data-d="3"><div class="icon">🧾</div><h3>Remittance factors can match</h3><p>Every remittance carries your full legal name and MC#, the details factoring companies use to find your payment, so carriers stop asking where their money is.</p><span class="tag">MC# on every remit</span></article>
+        <article class="feature-card reveal"><div class="icon">🔒</div><h3>Settings that can't quietly vanish</h3><p>Accessorial and fee lists are protected with automatic backups, so a stale tab can never wipe your rates.</p><span class="tag">Backed up automatically</span></article>
+        <article class="feature-card reveal" data-d="1"><div class="icon">🧩</div><h3>Brokerage and fleet, one board</h3><p>Broker outside carriers and dispatch your own trucks and owner-operators from the same load board and the same books.</p><span class="tag">Dispatch + accounting</span></article>
       </div>
     </section>
 
-    <section class="section-pad light" id="workflow">
+    <!-- TOUR -->
+    <section class="section-pad" id="tour" style="background:#050b16;color:#fff">
       <div class="container center-copy">
-        <p class="eyebrow">Workflow visibility</p>
-        <h2>From quote to completed load.</h2>
+        <p class="eyebrow reveal">Interactive product tour</p>
+        <h2 class="reveal">Click around. This is how it feels.</h2>
+        <div class="tour-tabs" role="tablist">
+          <button class="tour-tab active" data-tab="board">Load Board</button>
+          <button class="tour-tab" data-tab="track">Live Tracking</button>
+          <button class="tour-tab" data-tab="acct">Accounting</button>
+          <button class="tour-tab" data-tab="carr">Carriers</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="tour-frame reveal">
+          <div class="tf-bar"><i></i><i></i><i></i><span>app.brokersedgetms.com</span></div>
+
+          <div class="tour-pane active" id="pane-board">
+            <table class="tbl">
+              <thead><tr><th>Load</th><th>Lane</th><th>Carrier</th><th>Tracking</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>C5-1002901</td><td>Houston → Memphis</td><td>Blue Line Freight</td><td>GPS · 58 mph</td><td><span class="pill p-blue">In Transit</span></td></tr>
+                <tr><td>C5-1002902</td><td>Chicago → Denver</td><td>SAIA (LTL)</td><td>SAIA Portal</td><td><span class="pill p-blue">In Transit</span></td></tr>
+                <tr><td>C5-1002903</td><td>Phoenix → Dallas</td><td>Desert Haul LLC</td><td>GPS · idle</td><td><span class="pill p-amber">At Delivery</span></td></tr>
+                <tr><td>C5-1002904</td><td>Atlanta → Miami</td><td>TForce Freight</td><td>TForce Portal</td><td><span class="pill p-green">Delivered</span></td></tr>
+                <tr><td>C5-1002905</td><td>Reno → Boise</td><td>Unassigned</td><td>—</td><td><span class="pill p-gray">Pending</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="tour-pane" id="pane-track">
+            <div class="split">
+              <div class="mapbox">
+                <svg viewBox="0 0 460 290" preserveAspectRatio="none"><path d="M40 230 C 140 60, 260 250, 420 80" fill="none" stroke="#18b7d8" stroke-width="3" stroke-dasharray="6 7"/><circle cx="40" cy="230" r="7" fill="#22c55e"/><circle cx="420" cy="80" r="7" fill="#f59e0b"/></svg>
+                <div class="truck">🚚</div>
+              </div>
+              <div class="kv">
+                <div><small>Speed</small><b>62 mph</b></div>
+                <div><small>Last ping</small><b>1 min ago</b></div>
+                <div><small>ETA</small><b>4:15 PM</b></div>
+                <div><small>Remaining</small><b>214 mi</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tour-pane" id="pane-acct">
+            <div class="split">
+              <ul class="steplist">
+                <li><b>1</b> Delivered load auto-invoices the customer</li>
+                <li><b>2</b> Carrier bill created from the rate confirmation</li>
+                <li><b>3</b> Factored carriers route to their factoring company</li>
+                <li><b>4</b> Pay run by ACH with remittance email attached</li>
+              </ul>
+              <table class="tbl"><thead><tr><th>Payee</th><th>Method</th><th>Amount</th></tr></thead><tbody>
+                <tr><td>RTS Financial</td><td><span class="pill p-blue">Factoring</span></td><td>$1,980.00</td></tr>
+                <tr><td>Desert Haul LLC</td><td><span class="pill p-green">ACH</span></td><td>$1,350.00</td></tr>
+                <tr><td>Blue Line Freight</td><td><span class="pill p-green">ACH</span></td><td>$2,120.00</td></tr>
+              </tbody></table>
+            </div>
+          </div>
+
+          <div class="tour-pane" id="pane-carr">
+            <div class="split">
+              <div class="kv">
+                <div><small>Carrier</small><b>Transwest</b></div>
+                <div><small>Factoring</small><b>RTS</b></div>
+                <div><small>Remit-to</small><b>3 emails</b></div>
+                <div><small>Pay terms</small><b>Quick pay</b></div>
+              </div>
+              <ul class="steplist">
+                <li><b>✓</b> Insurance and authority on file</li>
+                <li><b>✓</b> Multiple remit-to emails as chips</li>
+                <li><b>✓</b> Factoring company linked once, used on every load</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE TRACKING DEMO -->
+    <section class="section-pad dark-panel" id="tracking">
+      <div class="container">
+        <div class="center-copy">
+          <p class="eyebrow reveal">What your customer sees</p>
+          <h2 class="reveal">A tracking page that ends the "where's my truck?" calls</h2>
+        </div>
+        <div class="live-demo">
+          <div class="reveal">
+            <ul class="steplist">
+              <li><b>📍</b> Timestamp of the last successful ping from the driver's phone</li>
+              <li><b>⚡</b> Current vehicle speed from live location updates</li>
+              <li><b>⏱</b> ETA from real driving pace plus traffic, in the destination time zone</li>
+              <li><b>🔗</b> One link. No login. Works on any phone.</li>
+            </ul>
+          </div>
+          <div class="phone reveal" data-d="1">
+            <h4>Load C5-1002847</h4><p class="sub">Dallas, TX → Atlanta, GA</p>
+            <div class="ph-map"><svg viewBox="0 0 260 130" preserveAspectRatio="none"><path d="M20 105 C 80 20, 150 110, 240 25" fill="none" stroke="#00b4d8" stroke-width="3" stroke-dasharray="5 5"/><circle cx="150" cy="62" r="7" fill="#00b4d8"><animate attributeName="r" values="6;10;6" dur="1.8s" repeatCount="indefinite"/></circle></svg></div>
+            <div class="ph-row"><span>Arriving</span><b id="phEta">≈ 4:15 PM</b></div>
+            <div class="ph-row"><span>Speed</span><b id="phSpeed">62 mph</b></div>
+            <div class="ph-row"><span>Last location update</span><b id="phPing">just now</b></div>
+            <div class="tl"><div>Picked up · Dallas, TX</div><div>In transit</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKFLOW -->
+    <section class="section-pad" id="workflow" style="background:#050b16;color:#fff">
+      <div class="container center-copy">
+        <p class="eyebrow reveal">Workflow</p>
+        <h2 class="reveal">From quote to cash in five moves</h2>
       </div>
       <div class="container timeline">
-        <div><span>01</span><h3>Build Load</h3><p>Create shipment details, stops, product, weight, equipment, and pricing.</p></div>
-        <div><span>02</span><h3>Accept Tender</h3><p>Bring in API tenders and attach required customer documents.</p></div>
-        <div><span>03</span><h3>Cover & Dispatch</h3><p>Assign carrier, driver, truck, trailer, and rate confirmation.</p></div>
-        <div><span>04</span><h3>Track Shipment</h3><p>Monitor pickup, transit, delivery, exceptions, and late freight.</p></div>
-        <div><span>05</span><h3>Bill & Close</h3><p>Verify POD, invoice customer, manage carrier pay, and close load.</p></div>
+        <div class="tl-step reveal"><span>1</span><h3>Book</h3><p>Quote, tender and build the load once.</p></div>
+        <div class="tl-step reveal" data-d="1"><span>2</span><h3>Dispatch</h3><p>Assign a carrier or your own truck.</p></div>
+        <div class="tl-step reveal" data-d="2"><span>3</span><h3>Track</h3><p>GPS or carrier portal, updating itself.</p></div>
+        <div class="tl-step reveal" data-d="3"><span>4</span><h3>Deliver</h3><p>POD attached, customer invoiced.</p></div>
+        <div class="tl-step reveal" data-d="4"><span>5</span><h3>Pay</h3><p>Carrier paid, remittance sent.</p></div>
       </div>
     </section>
 
-    <section class="section-pad" id="dashboards">
+    <!-- FEATURES -->
+    <section class="section-pad light" id="features">
       <div class="container center-copy">
-        <p class="eyebrow">Built for every department</p>
-        <h2>Dashboards that keep teams focused.</h2>
+        <p class="eyebrow reveal">Everything in the box</p>
+        <h2 class="reveal">The whole brokerage, one login</h2>
       </div>
-      <div class="container role-grid">
-        <article><h3>Admin</h3><p>Company settings, users, offices, permissions, billing summary, top customers, reports, and integrations.</p></article>
-        <article><h3>Dispatch</h3><p>Owner operator board, company trucks, tracking, assignments, running late, and exceptions.</p></article>
-        <article><h3>Accounting</h3><p>Receivables, payables to carriers, on-hold payables, invoicing, driver pay, and aging reports.</p></article>
-        <article><h3>Carrier</h3><p>Carrier profiles, insurance flags, packets, documents, load history, settlements, and direct logins.</p></article>
+      <div class="container feature-grid">
+        <article class="feature-card reveal"><div class="icon">📋</div><h3>Load management</h3><p>Rate cons, stops, accessorials and documents on every load.</p></article>
+        <article class="feature-card reveal" data-d="1"><div class="icon">🤝</div><h3>Tender acceptance</h3><p>Accept and manage customer tenders by API without retyping.</p></article>
+        <article class="feature-card reveal" data-d="2"><div class="icon">📱</div><h3>Driver app</h3><p>Drivers share location and update status from their phone.</p></article>
+        <article class="feature-card reveal"><div class="icon">💰</div><h3>Accounting</h3><p>Receivables, carrier payables and driver pay in one ledger.</p></article>
+        <article class="feature-card reveal" data-d="1"><div class="icon">📂</div><h3>Documents</h3><p>BOLs and PODs stored with the load and pulled from LTL carriers.</p></article>
+        <article class="feature-card reveal" data-d="2"><div class="icon">📊</div><h3>Dashboards</h3><p>Margin, aging and load volume at a glance.</p></article>
       </div>
     </section>
 
-    <section class="cta" id="contact">
-      <div class="container cta-card">
+    <!-- STATS -->
+    <section class="section-pad">
+      <div class="container center-copy">
+        <p class="eyebrow reveal">By the numbers</p>
+        <h2 class="reveal">Less busywork, built in</h2>
+      </div>
+      <div class="container stats">
+        <div class="stat reveal"><b data-count="30" data-suffix="m">0</b><span>LTL status auto-refresh</span></div>
+        <div class="stat reveal" data-d="1"><b data-count="2">0</b><span>Factoring partners</span></div>
+        <div class="stat reveal" data-d="2"><b data-count="2">0</b><span>LTL carrier portals live</span></div>
+        <div class="stat reveal" data-d="3"><b data-count="1">0</b><span>Login for the whole load</span></div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section-pad light" id="pricing">
+      <div class="container center-copy">
+        <p class="eyebrow reveal">Pricing</p>
+        <h2 class="reveal">Simple plans. Pay for the loads you move.</h2>
+        <p class="lead reveal">Every plan includes the full platform. Pick the monthly load volume that fits, and only pay overage if you outgrow it.</p>
+      </div>
+      <div class="container pricing">
+        <div class="plan reveal"><h3>Starter</h3><div class="price">$150<small>/mo</small></div><p style="color:var(--muted);margin:0">50 loads included · $3.00 per extra load</p><ul><li>Full load board and dispatch</li><li>Live tracking links</li><li>Documents and accounting</li><li>Driver app</li></ul><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a></div>
+        <div class="plan pop reveal" data-d="1"><span class="ribbon">Most popular</span><h3>Growth</h3><div class="price">$400<small>/mo</small></div><p style="color:#b9c9dc;margin:0">150 loads included · $2.50 per extra load</p><ul><li>Everything in Starter</li><li>LTL carrier portal tracking</li><li>Factoring-aware carrier pay</li><li>Remittance emails with MC#</li></ul><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a></div>
+        <div class="plan reveal" data-d="2"><h3>Scale</h3><div class="price">$950<small>/mo</small></div><p style="color:var(--muted);margin:0">400 loads included · $2.00 per extra load</p><ul><li>Everything in Growth</li><li>Best per-load rate</li><li>Built for busy teams</li><li>Priority onboarding</li></ul><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-pad">
+      <div class="container center-copy"><p class="eyebrow">FAQ</p><h2>Questions brokers ask</h2></div>
+      <div class="container faq">
+        <details><summary>Which LTL carriers can I track automatically?</summary><p>SAIA and TForce Freight, using the carrier's own portal data. Status refreshes about every 30 minutes and you can refresh a load on demand.</p></details>
+        <details><summary>How does factoring work for carriers?</summary><p>Link a carrier to its factoring company once. Pay runs then use the factor's remit-to emails (you can add several), and factored loads skip the carrier due-date countdown.</p></details>
+        <details><summary>Can customers track without an account?</summary><p>Yes. You send a tracking link; they see status, last location update, speed and a live ETA with no login.</p></details>
+        <details><summary>Can I run my own trucks and brokered freight together?</summary><p>Yes. Outside carriers, owner-operators and company trucks share one board and one set of books.</p></details>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section-pad dark-panel" id="contact">
+      <div class="container cta-grid">
         <div>
-          <p class="eyebrow">Ready to build the edge?</p>
-          <h2>Give your brokerage a TMS that feels modern, fast, and built around freight.</h2>
+          <p class="eyebrow">Ready when you are</p>
+          <h2>See it on your own freight</h2>
+          <p class="lead">Start a free trial now, or tell us about your operation and we'll walk you through a demo.</p>
+          <div class="hero-actions"><a class="btn btn-primary btn-lg" href="https://app.brokersedgetms.com/signup">Start Free Trial →</a></div>
         </div>
         <form class="lead-form" action="https://formspree.io/f/xdarlkjk" method="POST">
           <label>Name<input type="text" name="name" placeholder="Your name" required /></label>
@@ -193,10 +336,10 @@
         <img src="assets/brokersedge-logo-wide.png" alt="BrokersEdge TMS logo" />
         <p>The all-in-one TMS built for freight brokerages and carrier-friendly operations.</p>
       </div>
-      <div><h4>Platform</h4><a href="#platform">Features</a><a href="#workflow">Workflow</a><a href="#dashboards">Dashboards</a></div>
+      <div><h4>Platform</h4><a href="#edge">Why Us</a><a href="#tour">Product Tour</a><a href="#pricing">Pricing</a></div>
       <div><h4>Compare</h4><a href="/brokerage-carrier-tms/">Brokerage + Carrier TMS</a><a href="/vs/aljex/">vs Aljex</a><a href="/vs/alvys/">vs Alvys</a></div>
-      <div><h4>Company</h4><a href="#contact">Request Demo</a><a href="#">Support</a><a href="#">Privacy</a></div>
-      <div><h4>Newsletter</h4><p>Get product updates and freight tech insights.</p><div class="newsletter"><input placeholder="Email address" /><button>→</button></div></div>
+      <div><h4>Company</h4><a href="#contact">Request Demo</a><a href="/resources/">Resources</a><a href="https://app.brokersedgetms.com/login">Log in</a></div>
+      <div><h4>Newsletter</h4><p>Get product updates and freight tech insights.</p><div class="newsletter"><input placeholder="Email address" aria-label="Email address" /><button aria-label="Subscribe">→</button></div></div>
     </div>
   </footer>
   <script src="script.js"></script>
