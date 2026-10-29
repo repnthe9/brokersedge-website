@@ -89,3 +89,13 @@ if (sp && pg) {
     pg.textContent = secs < 5 ? 'just now' : secs + ' sec ago';
   }, 1000);
 }
+
+// Hero: real load status bar advancing through the app's 9 steps
+(function(){
+  const steps=[...document.querySelectorAll('#lsBar .ls-step')];
+  if(!steps.length) return;
+  const n=steps.length; let t=1;
+  function paint(i){steps.forEach((s,k)=>{s.classList.toggle('done',k<=i);s.classList.toggle('active',k===i)})}
+  paint(t);
+  setInterval(()=>{ t=(t+1)%(n+2); paint(Math.min(t,n-1)); },1300);
+})();

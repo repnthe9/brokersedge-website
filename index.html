@@ -81,33 +81,25 @@
             <a class="btn btn-primary btn-lg pulse" href="https://app.brokersedgetms.com/signup">Start 30-Day Free Trial →</a>
             <a class="btn btn-secondary btn-lg" href="#contact">Book a Demo</a>
           </div>
-          <div class="hero-stats" aria-label="Platform highlights">
-            <div><b data-count="1">0</b><span>Platform for the whole load</span></div>
-            <div><b data-count="17">0</b><span>Live integrations</span></div>
-            <div><b data-count="24" data-suffix="/7">0</b><span>Operational visibility</span></div>
-          </div>
+          <ul class="trust-row"><li>30-day free trial</li><li>No credit card</li><li>Every feature on every plan</li></ul>
         </div>
 
-        <div class="live" id="heroLive" aria-hidden="true">
-          <div class="load-card">
-            <div class="lc-top"><span class="lc-id">C5-1002847</span><span class="lc-badge" id="lcBadge">Booked</span></div>
-            <div class="lc-lane">Dallas, TX → Atlanta, GA · Dry Van · 782 mi</div>
-            <div class="steps" id="lcSteps">
-              <div class="step on"><i></i>Booked</div><div class="bar"><b></b></div>
-              <div class="step"><i></i>Dispatched</div><div class="bar"><b></b></div>
-              <div class="step"><i></i>In Transit</div><div class="bar"><b></b></div>
-              <div class="step"><i></i>Delivered</div>
-            </div>
-            <div class="lc-grid">
-              <div class="lc-cell"><small>Customer</small><b>$2,450</b></div>
-              <div class="lc-cell"><small>Carrier</small><b>$1,980</b></div>
-              <div class="lc-cell"><small>Margin</small><b style="color:#6ee7a0">$470</b></div>
-            </div>
-          </div>
-          <div class="float f1" data-at="1"><span class="ic">📦</span><div>Rate con signed<small>Carrier confirmed in one click</small></div></div>
-          <div class="float f2" data-at="2"><span class="ic">📍</span><div>Live ping · 62 mph<small>ETA 4:15 PM, updated 1 min ago</small></div></div>
-          <div class="float f3" data-at="3"><span class="ic">📄</span><div>POD pulled automatically<small>Attached to the load</small></div></div>
-          <div class="float f4" data-at="3"><span class="ic">💸</span><div>Carrier paid by ACH<small>Remittance sent with your MC#</small></div></div>
+        <div class="route-card" aria-hidden="true">
+          <div class="rc-head"><span>LOAD BE-20431</span><span class="rc-live"><i></i>LIVE</span></div>
+          <svg class="rc-map" viewBox="0 0 440 250" xmlns="http://www.w3.org/2000/svg">
+            <defs><pattern id="rcg" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#1d2a38" stroke-width="1"/></pattern></defs>
+            <rect width="440" height="250" fill="url(#rcg)"/>
+            <path id="rcpath" d="M60 190 C 130 60, 250 230, 380 60" fill="none" stroke="#243546" stroke-width="10" stroke-linecap="round"/>
+            <path d="M60 190 C 130 60, 250 230, 380 60" fill="none" stroke="#00b4d8" stroke-width="3" stroke-dasharray="3 9" stroke-linecap="round"/>
+            <circle cx="60" cy="190" r="9" fill="#0b0f14" stroke="#00b4d8" stroke-width="4"/>
+            <circle cx="380" cy="60" r="9" fill="#00b4d8"/>
+            <g><rect x="-14" y="-9" width="28" height="18" rx="3" fill="#fff"/><rect x="6" y="-6" width="9" height="12" rx="2" fill="#00b4d8"/><circle cx="-7" cy="10" r="3.5" fill="#0b0f14"/><circle cx="8" cy="10" r="3.5" fill="#0b0f14"/>
+              <animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#rcpath"/></animateMotion></g>
+          </svg>
+          <div class="rc-lane"><div><small>PICKUP</small><b>Dallas, TX</b></div><div class="rc-arrow">→</div><div><small>DELIVERY</small><b>Atlanta, GA</b></div></div>
+          <div class="rc-row"><div><small>ETA</small><b>4:15 PM</b></div><div><small>SPEED</small><b>62 mph</b></div><div><small>LAST PING</small><b>1 min</b></div></div>
+          <div class="lsbar" id="lsBar"><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Created</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Covered</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Dispatched</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Loading</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>In Transit</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Onsite Delivery</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Delivered</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Invoiced</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Paid</p></div></div>
+
         </div>
       </div>
     </section>
@@ -169,8 +161,8 @@
         <p class="eyebrow reveal">How it works</p>
         <h2 class="reveal">Here is how your team runs freight in BrokersEdge</h2>
       </div>
-      <div class="container">
-        <div class="tour-tabs"><button class="tour-tab active" data-i="0">Dashboard</button><button class="tour-tab" data-i="1">Load Board</button><button class="tour-tab" data-i="2">Live Tracking</button><button class="tour-tab" data-i="3">Accounting</button><button class="tour-tab" data-i="4">Carriers</button><button class="tour-tab" data-i="5">Reports</button><button class="tour-tab" data-i="6">Calendar</button></div>
+      <div class="container tour-wrap">
+        <div class="tour-tabs"><button class="tour-tab active" data-i="0"><b>Dashboard</b><small>Everything at a glance</small></button><button class="tour-tab" data-i="1"><b>Load Board</b><small>Every load, one board</small></button><button class="tour-tab" data-i="2"><b>Live Tracking</b><small>Trucks on the map</small></button><button class="tour-tab" data-i="3"><b>Accounting</b><small>Invoice and pay</small></button><button class="tour-tab" data-i="4"><b>Carriers</b><small>Onboard and organize</small></button><button class="tour-tab" data-i="5"><b>Reports</b><small>Know your margins</small></button><button class="tour-tab" data-i="6"><b>Calendar</b><small>Pickups and deliveries</small></button></div>
         <div class="tour-stage">
           <button class="tour-arrow prev" aria-label="Previous screen">&#8249;</button>
           <div class="tour-frame"><div class="tour-slide active"><img src="/assets/app-dashboard.jpg" alt="BrokersEdge TMS Dashboard" width="2000" height="909" /></div><div class="tour-slide"><img src="/assets/app-loads.jpg" alt="BrokersEdge TMS Load Board" width="2000" height="909" loading="lazy" /></div><div class="tour-slide"><img src="/assets/app-tracking.jpg" alt="BrokersEdge TMS Live Tracking" width="2000" height="909" loading="lazy" /></div><div class="tour-slide"><img src="/assets/app-accounting.jpg" alt="BrokersEdge TMS Accounting" width="2000" height="909" loading="lazy" /></div><div class="tour-slide"><img src="/assets/app-carriers.jpg" alt="BrokersEdge TMS Carriers" width="2000" height="909" loading="lazy" /></div><div class="tour-slide"><img src="/assets/app-reports.jpg" alt="BrokersEdge TMS Reports" width="2000" height="909" loading="lazy" /></div><div class="tour-slide"><img src="/assets/app-calendar.jpg" alt="BrokersEdge TMS Calendar" width="2000" height="872" loading="lazy" /></div></div>
@@ -239,20 +231,6 @@
       </div>
     </section>
 
-    <!-- STATS -->
-    <section class="section-pad">
-      <div class="container center-copy">
-        <p class="eyebrow reveal">By the numbers</p>
-        <h2 class="reveal">Less busywork, built in</h2>
-      </div>
-      <div class="container stats">
-        <div class="stat reveal"><b data-count="1">0</b><span>Login for the whole load</span></div>
-        <div class="stat reveal" data-d="1"><b data-count="17">0</b><span>Live integrations</span></div>
-        <div class="stat reveal" data-d="2"><b data-count="5">0</b><span>Steps from booked to paid</span></div>
-        <div class="stat reveal" data-d="3"><b data-count="24" data-suffix="/7">0</b><span>Operational visibility</span></div>
-      </div>
-    </section>
-
     <!-- PRICING -->
     <section class="section-pad light" id="pricing">
       <div class="container center-copy">
@@ -261,10 +239,10 @@
         <p class="lead reveal">Every plan includes the full platform. The only difference is how many loads are included each month. Pay the overage rate only if you go over.</p>
       </div>
       <div class="container"><div class="trial-banner reveal"><b>30-day free trial</b><span>Full access to every feature on any plan. No credit card required. Cancel anytime.</span><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start 30-Day Free Trial</a></div></div>
-      <div class="container pricing">
-        <div class="plan reveal"><h3>Starter</h3><div class="price">$150<small>/mo</small></div><p style="color:var(--muted);margin:0">For small brokerages getting started</p><ul><li><b>50 loads</b> included each month</li><li>$3.00 per additional load</li><li>Every feature included</li><li>30-day free trial, no card</li></ul><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a></div>
-        <div class="plan pop reveal" data-d="1"><span class="ribbon">Most popular</span><h3>Growth</h3><div class="price">$400<small>/mo</small></div><p style="color:#b9c9dc;margin:0">For growing teams moving steady volume</p><ul><li><b>150 loads</b> included each month</li><li>$2.50 per additional load</li><li>Every feature included</li><li>30-day free trial, no card</li></ul><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a></div>
-        <div class="plan reveal" data-d="2"><h3>Scale</h3><div class="price">$950<small>/mo</small></div><p style="color:var(--muted);margin:0">For high-volume brokerages</p><ul><li><b>400 loads</b> included each month</li><li>$2.00 per additional load</li><li>Every feature included</li><li>30-day free trial, no card</li></ul><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a></div>
+      <div class="container ladder">
+        <div class="rung reveal"><div class="rg-loads"><b>50</b><span>loads a month</span></div><div class="rg-mid"><em>Getting started</em><small>$3.00 per extra load · every feature included</small></div><div class="rg-price">$150<small>/mo</small></div><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a></div>
+        <div class="rung reveal pop"><div class="rg-loads"><b>150</b><span>loads a month</span></div><div class="rg-mid"><em>Most popular</em><small>$2.50 per extra load · every feature included</small></div><div class="rg-price">$400<small>/mo</small></div><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a></div>
+        <div class="rung reveal"><div class="rg-loads"><b>400</b><span>loads a month</span></div><div class="rg-mid"><em>High volume</em><small>$2.00 per extra load · every feature included</small></div><div class="rg-price">$950<small>/mo</small></div><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a></div>
       </div>
     </section>
 
