@@ -59,15 +59,25 @@ if (live) {
   }, 2600);
 }
 
-// Tour tabs
-document.querySelectorAll('.tour-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.tour-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.tour-pane').forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById('pane-' + tab.dataset.tab).classList.add('active');
-  });
-});
+// Tour: tabs, arrows, click-to-advance
+(function(){
+  const tabs=[...document.querySelectorAll('.tour-tab')], slides=[...document.querySelectorAll('.tour-slide')];
+  if(!tabs.length) return;
+  const caps=["Book, filter and manage every load from one board", "See every truck on the map, live", "Invoice customers and pay carriers without leaving the TMS", "Onboard, pay and keep every carrier organized", "Run the reports your brokerage actually needs", "See every pickup and delivery on one shipment calendar"], cap=document.getElementById('tourCap');
+  let cur=0;
+  function go(i){
+    cur=(i+tabs.length)%tabs.length;
+    tabs.forEach((t,k)=>t.classList.toggle('active',k===cur));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===cur));
+    if(cap) cap.textContent=caps[cur];
+    const im=slides[cur].querySelector('img'); if(im) im.loading='eager';
+  }
+  tabs.forEach((t,k)=>t.addEventListener('click',()=>go(k)));
+  const p=document.querySelector('.tour-arrow.prev'), n=document.querySelector('.tour-arrow.next');
+  if(p) p.addEventListener('click',()=>go(cur-1));
+  if(n) n.addEventListener('click',()=>go(cur+1));
+  slides.forEach(s=>s.addEventListener('click',()=>go(cur+1)));
+})();
 
 // Tracking phone demo: speed / last ping flicker
 const sp = document.getElementById('phSpeed'), pg = document.getElementById('phPing');
