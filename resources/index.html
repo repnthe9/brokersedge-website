@@ -80,5 +80,16 @@
     </div>
   </footer>
   <script src="/script.js"></script>
+<script>
+/* CTA click tracking -> GA4 events (trial_cta_click, login_click) */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href]'); if(!a||typeof gtag!=='function')return;
+  var h=a.getAttribute('href')||'', n='';
+  if(h.indexOf('app.brokersedgetms.com/signup')>-1)n='trial_cta_click';
+  else if(h.indexOf('app.brokersedgetms.com/login')>-1)n='login_click';
+  if(!n)return;
+  gtag('event',n,{link_text:(a.textContent||'').trim().slice(0,60),page_path:location.pathname,transport_type:'beacon'});
+},true);
+</script>
 </body>
 </html>
