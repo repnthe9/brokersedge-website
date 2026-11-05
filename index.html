@@ -146,6 +146,53 @@
         <p class="tour-cap" id="tourCap">Your whole operation at a glance, the moment you log in</p>
       </div>
     </section>
+    <!-- LIVE TRACKING (animated) -->
+    <section class="section-pad dark-panel track2" id="tracking">
+      <div class="container">
+        <div class="center-copy">
+          <p class="eyebrow reveal">Track it</p>
+          <h2 class="reveal">Watch a load go from booked to paid</h2>
+          <p class="lead reveal">Every status updates itself from the driver's phone. Your customer gets a link and never has to call you for a check call.</p>
+        </div>
+        <div class="track2-grid">
+          <div class="route-card reveal" aria-hidden="true">
+          <div class="rc-head"><span>LOAD BE-20431</span><span class="rc-live"><i></i>LIVE</span></div>
+          <svg class="rc-map" viewBox="0 0 440 250" xmlns="http://www.w3.org/2000/svg">
+            <defs><pattern id="rcg" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#1d2a38" stroke-width="1"/></pattern></defs>
+            <rect width="440" height="250" fill="url(#rcg)"/>
+            <path id="rcpath" d="M60 190 C 130 60, 250 230, 380 60" fill="none" stroke="#243546" stroke-width="10" stroke-linecap="round"/>
+            <path d="M60 190 C 130 60, 250 230, 380 60" fill="none" stroke="#00b4d8" stroke-width="3" stroke-dasharray="3 9" stroke-linecap="round"/>
+            <circle cx="60" cy="190" r="9" fill="#0b0f14" stroke="#00b4d8" stroke-width="4"/>
+            <circle cx="380" cy="60" r="9" fill="#00b4d8"/>
+            <g><rect x="-14" y="-9" width="28" height="18" rx="3" fill="#fff"/><rect x="6" y="-6" width="9" height="12" rx="2" fill="#00b4d8"/><circle cx="-7" cy="10" r="3.5" fill="#0b0f14"/><circle cx="8" cy="10" r="3.5" fill="#0b0f14"/>
+              <animateMotion dur="9s" repeatCount="indefinite" rotate="auto"><mpath href="#rcpath"/></animateMotion></g>
+          </svg>
+          <div class="rc-lane"><div><small>PICKUP</small><b>Dallas, TX</b></div><div class="rc-arrow">→</div><div><small>DELIVERY</small><b>Atlanta, GA</b></div></div>
+          <div class="rc-row"><div><small>ETA</small><b>4:15 PM</b></div><div><small>SPEED</small><b>62 mph</b></div><div><small>LAST PING</small><b>1 min</b></div></div>
+          <div class="lsbar" id="lsBar"><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Created</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Covered</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Dispatched</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Loading</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>In Transit</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Onsite Delivery</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Delivered</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Invoiced</p></div><div class="ls-step"><i class="ls-line"></i><span class="ls-dot"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span><p>Paid</p></div></div>
+
+        </div>
+          <div class="track2-side">
+            <ul class="steplist reveal">
+              <li><b>📍</b> Last ping time from the driver's phone</li>
+              <li><b>⚡</b> Current speed from live location updates</li>
+              <li><b>⏱</b> ETA from real driving pace plus traffic</li>
+              <li><b>🔗</b> One link. No login. Works on any phone.</li>
+            </ul>
+          <div class="phone reveal" data-d="1">
+            <h4>Load C5-1002847</h4><p class="sub">Dallas, TX → Atlanta, GA</p>
+            <div class="ph-map"><svg viewBox="0 0 260 130" preserveAspectRatio="none"><path d="M20 105 C 80 20, 150 110, 240 25" fill="none" stroke="#00b4d8" stroke-width="3" stroke-dasharray="5 5"/><circle cx="150" cy="62" r="7" fill="#00b4d8"><animate attributeName="r" values="6;10;6" dur="1.8s" repeatCount="indefinite"/></circle></svg></div>
+            <div class="ph-row"><span>Arriving</span><b id="phEta">≈ 4:15 PM</b></div>
+            <div class="ph-row"><span>Speed</span><b id="phSpeed">62 mph</b></div>
+            <div class="ph-row"><span>Last location update</span><b id="phPing">just now</b></div>
+            <div class="tl"><div>Picked up · Dallas, TX</div><div>In transit</div></div>
+          </div>
+          </div>
+        </div>
+        <div class="center-copy"><div class="hero-actions" style="justify-content:center"><a class="btn btn-primary btn-lg" href="https://app.brokersedgetms.com/signup">Start 30-Day Free Trial →</a></div></div>
+      </div>
+    </section>
+
     <!-- START -->
     <section class="section-pad dark-panel" id="start">
       <div class="container center-copy">

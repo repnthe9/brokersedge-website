@@ -38,3 +38,8 @@
   .sticky-cta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#00b4d8;color:#0b0f14;text-align:center;font-weight:800;padding:16px;letter-spacing:.03em;text-transform:uppercase;font-size:14px;box-shadow:0 -6px 24px rgba(0,0,0,.35)}
   body{padding-bottom:56px}
 }
+
+.track2-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;margin:40px auto}
+.track2-side{display:grid;gap:24px;justify-items:start}
+.track2-side .phone{margin:0}
+@media (max-width:860px){.track2-grid{grid-template-columns:1fr}.track2-side{justify-items:stretch}}
