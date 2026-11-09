@@ -54,7 +54,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-B9E0DRJ74R');
+  gtag('config', 'G-B9E0DRJ74R', {linker:{domains:['app.brokersedgetms.com'],accept_incoming:true}});
 </script>
 </head>
 <body>
@@ -86,13 +86,26 @@
           <p class="hero2-sub">Stop running your brokerage across a TMS, QuickBooks, a tracking tool and spreadsheets that never agree. BrokersEdge puts dispatch, tracking, invoicing and your books in one place, and <b>we move your carriers, customers and open loads in for you.</b></p>
           <div class="hero-actions">
             <a class="btn btn-primary btn-lg" href="https://app.brokersedgetms.com/signup">Start 30-Day Free Trial →</a>
-            <a class="btn btn-secondary btn-lg" href="#tour">See the software</a>
+            <a class="btn btn-secondary btn-lg" href="#watch" data-watch="1">▶ Watch the 60-sec tour</a>
           </div>
           <ul class="trust-row"><li>No credit card</li><li>Every feature on every plan</li><li>Free data import</li></ul>
         </div>
-        <div class="hero2-shot">
-          <div class="shot"><div class="tf-bar"><i></i><i></i><i></i><span>app.brokersedgetms.com/dashboard</span></div>
-          <img src="/assets/app-dashboard.jpg" alt="BrokersEdge TMS dashboard with load status, financials, dispatch board and alerts" width="2000" height="909" fetchpriority="high" /></div>
+        <div class="hero2-shot" id="watch">
+          <div class="shot vid" id="vidbox"><div class="tf-bar"><i></i><i></i><i></i><span>60-second tour · app.brokersedgetms.com</span></div>
+          <button class="vid-play" id="vidplay" aria-label="Play 60-second product tour"><img src="/assets/promo-poster.jpg" alt="BrokersEdge TMS 60-second product tour" width="1280" height="720" fetchpriority="high" /><span class="vid-btn">▶</span><span class="vid-cap">Watch the 60-second tour</span></button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SETUP CHOOSER -->
+    <section class="setup">
+      <div class="container">
+        <h2>Where are you starting from?</h2>
+        <p class="setup-sub">Pick the one closest to you and we'll show you the fastest way in.</p>
+        <div class="setup-grid">
+          <a class="setup-card" data-setup="new" href="https://app.brokersedgetms.com/signup"><b>I'm just starting out</b><span>Spin up your brokerage in a day. Free trial, no card, we set up the basics with you.</span><i>Start free →</i></a>
+          <a class="setup-card" data-setup="switching" href="/switch/"><b>I'm switching from another TMS</b><span>Send us a spreadsheet or export. We load your carriers, customers and open loads for you.</span><i>See how the move works →</i></a>
+          <a class="setup-card" data-setup="asset" href="/brokerage-carrier-tms/"><b>I run trucks and brokered freight</b><span>One board and one set of books for company trucks, owner-operators and outside carriers.</span><i>See the combined view →</i></a>
         </div>
       </div>
     </section>
@@ -303,6 +316,26 @@ document.addEventListener('click',function(e){
   if(!n)return;
   gtag('event',n,{link_text:(a.textContent||'').trim().slice(0,60),page_path:location.pathname,transport_type:'beacon'});
 },true);
+</script>
+<script>
+(function(){
+  var box=document.getElementById('vidbox'),btn=document.getElementById('vidplay');
+  function ev(n,p){if(typeof gtag==='function')gtag('event',n,p||{});}
+  function play(){
+    if(!box||box.querySelector('video'))return;
+    var v=document.createElement('video');v.src='/assets/promo-tour.mp4';v.controls=true;v.autoplay=true;v.playsInline=true;v.poster='/assets/promo-poster.jpg';v.style.width='100%';v.style.display='block';
+    v.addEventListener('play',function(){ev('video_play',{video:'promo_tour'});},{once:true});
+    v.addEventListener('ended',function(){ev('video_complete',{video:'promo_tour'});});
+    v.addEventListener('timeupdate',function(){if(!v._h&&v.currentTime/(v.duration||1)>.5){v._h=1;ev('video_50pct',{video:'promo_tour'});}});
+    btn.replaceWith(v);v.play&&v.play().catch(function(){});
+  }
+  if(btn)btn.addEventListener('click',play);
+  document.addEventListener('click',function(e){
+    var w=e.target.closest&&e.target.closest('[data-watch]');if(w){var t=document.getElementById('vidbox');if(t){t.scrollIntoView({behavior:'smooth',block:'center'});setTimeout(play,350);}e.preventDefault();return;}
+    var c=e.target.closest&&e.target.closest('[data-setup]');if(c)ev('setup_choice',{choice:c.getAttribute('data-setup')});
+  },true);
+  var f=document.querySelector('#contact form');if(f)f.addEventListener('submit',function(){ev('demo_request_submit');});
+})();
 </script>
 </body>
 </html>
