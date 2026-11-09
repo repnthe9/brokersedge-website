@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TMS Cost Calculator: What Are You Really Paying? | BrokersEdge TMS</title>
+  <meta name="description" content="Free TMS cost calculator. Enter your monthly loads and current system (AscendTMS, Alvys or other) to see what you would pay on BrokersEdge. No signup." />
+  <link rel="canonical" href="https://www.brokersedgetms.com/tools/tms-cost-calculator/" />
+  <link rel="icon" type="image/png" href="/assets/brokersedge-logo-mark.png" />
+  <link rel="apple-touch-icon" href="/assets/brokersedge-logo-mark.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BrokersEdge TMS" />
+  <meta property="og:title" content="TMS Cost Calculator: What Are You Really Paying? | BrokersEdge TMS" />
+  <meta property="og:description" content="Free TMS cost calculator. Enter your monthly loads and current system (AscendTMS, Alvys or other) to see what you would pay on BrokersEdge. No signup." />
+  <meta property="og:url" content="https://www.brokersedgetms.com/tools/tms-cost-calculator/" />
+  <meta property="og:image" content="https://www.brokersedgetms.com/assets/new-dashboard.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TMS Cost Calculator: What Are You Really Paying? | BrokersEdge TMS" />
+  <meta name="twitter:description" content="Free TMS cost calculator. Enter your monthly loads and current system (AscendTMS, Alvys or other) to see what you would pay on BrokersEdge. No signup." />
+  <meta name="twitter:image" content="https://www.brokersedgetms.com/assets/new-dashboard.png" />
+
+  <link rel="stylesheet" href="/styles.css" />
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9E0DRJ74R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B9E0DRJ74R');
+</script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav-shell">
+      <a class="brand" href="/" aria-label="BrokersEdge TMS home">
+        <img src="/assets/brokersedge-logo-wide-clear.png" alt="BrokersEdge TMS logo" />
+      </a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="nav-links" data-nav>
+        <a href="/#why">Why Us</a>
+        <a href="/#tour">Product Tour</a>
+        <a href="/resources/">Resources</a>
+        <a href="/tools/tms-cost-calculator/">Cost Calculator</a>
+        <a href="/#contact">Contact</a>
+        <a class="login" href="https://app.brokersedgetms.com/login">Log in</a>
+        <a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-pad"><div class="hero-bg"></div>
+      <div class="container center-copy" style="max-width:860px">
+        <p class="eyebrow">Free tool · no signup</p>
+        <h1 style="font-size:clamp(30px,4.4vw,50px)">What is your TMS really costing you?</h1>
+        <p class="hero-text">Enter the loads you move each month and the system you use today. See what the same volume costs on BrokersEdge, with every feature included.</p>
+      </div></section>
+<section class="section-pad light"><div class="container" style="max-width:1000px">
+<style>
+.sv{display:grid;grid-template-columns:1.05fr 1fr;gap:26px;align-items:stretch}
+@media(max-width:800px){.sv{grid-template-columns:1fr}}
+.sv-in{background:#fff;border:1px solid #dbe3ea;border-radius:14px;padding:22px}
+.sv-in label{display:block;font-weight:600;font-size:14px;margin:14px 0 6px;color:#0b0f14}
+.sv-in label:first-child{margin-top:0}
+.sv-in input,.sv-in select{width:100%;padding:11px 12px;border:1px solid #cdd6df;border-radius:8px;font-size:16px;background:#fff;color:#0b0f14}
+.sv-in small{display:block;color:#5b6b7a;font-size:12px;margin-top:4px}
+.sv-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sv-out{background:#0b0f14;color:#fff;border-radius:14px;padding:24px;display:flex;flex-direction:column}
+.sv-out h3{margin:0 0 12px;font-size:13px;color:#7ee7ff;letter-spacing:.05em;text-transform:uppercase}
+.sv-line{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px}
+.sv-line b{font-size:17px}
+.sv-big{font-size:40px;font-weight:800;color:#00b4d8;line-height:1.1;margin:16px 0 4px}
+.sv-sub{font-size:14px;color:#cfe3ee;min-height:20px}
+.sv-note{font-size:12.5px;color:#9fb0c0;margin-top:12px;line-height:1.5}
+.sv-cta{margin-top:auto;padding-top:16px}
+.sv-hide{display:none}
+</style>
+<div class="sv" id="sv">
+ <div class="sv-in">
+  <label for="sv-loads">Loads you move per month</label>
+  <input id="sv-loads" type="number" min="0" step="1" value="100" inputmode="numeric" />
+  <label for="sv-tms">Your current TMS</label>
+  <select id="sv-tms">
+    <option value="ascend">AscendTMS (per user)</option>
+    <option value="alvys">Alvys (per load)</option>
+    <option value="other">Another system (enter your cost)</option>
+  </select>
+  <div id="sv-ascend">
+    <div class="sv-row2">
+      <div><label for="sv-users">Users</label><input id="sv-users" type="number" min="1" step="1" value="3" inputmode="numeric" /></div>
+      <div><label for="sv-plan">Ascend plan</label><select id="sv-plan"><option value="69">Basic · $69/user</option><option value="119" selected>Premium · $119/user</option><option value="149">Pro · $149/user</option></select></div>
+    </div>
+    <small>Ascend lists tracking and accounting under Premium, and e-signatures and bulk actions under Pro. Prices per user per month from Ascend's plan page, seen Nov 9, 2026.</small>
+  </div>
+  <div id="sv-alvys" class="sv-hide">
+    <label for="sv-rate">Your price per load ($)</label>
+    <input id="sv-rate" type="number" min="0" step="any" value="3.95" inputmode="decimal" />
+    <small>Alvys advertises per-load pricing starting at $3.95 and quotes by volume. Enter your actual rate if you know it. Native EDI and some add-ons cost extra.</small>
+  </div>
+  <div id="sv-other" class="sv-hide">
+    <label for="sv-cost">What you pay each month ($)</label>
+    <input id="sv-cost" type="number" min="0" step="any" value="500" inputmode="decimal" />
+    <small>Include every seat, add-on, accounting, tracking and EDI fee.</small>
+  </div>
+ </div>
+ <div class="sv-out" aria-live="polite">
+  <h3>Your monthly cost</h3>
+  <div class="sv-line"><span id="sv-cur-name">AscendTMS</span><b id="sv-cur">-</b></div>
+  <div class="sv-line"><span>BrokersEdge</span><b id="sv-be">-</b></div>
+  <div class="sv-line"><span>Per load, now vs BrokersEdge</span><b id="sv-pl">-</b></div>
+  <div class="sv-big" id="sv-save">-</div>
+  <div class="sv-sub" id="sv-sub">&nbsp;</div>
+  <p class="sv-note" id="sv-plan-note"></p>
+  <div class="sv-cta"><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start 30-Day Free Trial</a>
+  <p class="sv-note" style="margin-top:10px">Every feature is included in every BrokersEdge plan, and we import your carriers, customers and open loads for you.</p></div>
+ </div>
+</div>
+<script>
+(function(){
+ var $=function(id){return document.getElementById(id)};
+ function num(id){var v=parseFloat($(id).value);return isFinite(v)&&v>0?v:0}
+ function usd(v){return (v<0?'-':'')+'$'+Math.abs(v).toLocaleString('en-US',{maximumFractionDigits:0})}
+ function usd2(v){return '$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
+ var PLANS=[{n:50,base:150,over:3},{n:150,base:400,over:2.5},{n:400,base:950,over:2}];
+ function be(loads){
+  var best=null;
+  PLANS.forEach(function(p){var c=p.base+Math.max(0,loads-p.n)*p.over;if(!best||c<best.cost)best={cost:c,n:p.n,base:p.base,over:p.over}});
+  return best;
+ }
+ var used=false;
+ function calc(){
+  var loads=num('sv-loads'),t=$('sv-tms').value,cur=0,name='';
+  $('sv-ascend').className=t==='ascend'?'':'sv-hide';
+  $('sv-alvys').className=t==='alvys'?'':'sv-hide';
+  $('sv-other').className=t==='other'?'':'sv-hide';
+  if(t==='ascend'){cur=Math.max(1,num('sv-users'))*num('sv-plan');name='AscendTMS';}
+  else if(t==='alvys'){cur=loads*num('sv-rate');name='Alvys (at your rate)';}
+  else{cur=num('sv-cost');name='Your current TMS';}
+  var b=be(loads),cost=loads>0?b.cost:0;
+  $('sv-cur-name').textContent=name;
+  $('sv-cur').textContent=usd(cur);
+  $('sv-be').textContent=loads>0?usd(cost):'-';
+  $('sv-pl').textContent=loads>0?usd2(cur/loads)+' vs '+usd2(cost/loads):'-';
+  var save=cur-cost,big=$('sv-save'),sub=$('sv-sub'),note=$('sv-plan-note');
+  if(loads<=0||cur<=0){big.textContent='-';sub.innerHTML='&nbsp;';note.textContent='';return;}
+  if(save>0){big.textContent=usd(save)+' / month';sub.textContent='That is about '+usd(save*12)+' a year back in your pocket.';}
+  else{big.textContent='About even';sub.textContent='At this volume your current cost is at or below BrokersEdge. Compare features, support and what each plan includes.';}
+  var ov=Math.max(0,loads-b.n);
+  note.textContent='BrokersEdge estimate: the '+b.n+'-load plan at '+usd(b.base)+(ov>0?' plus '+ov+' extra loads at '+usd2(b.over):'')+', every feature included. Estimates only; confirm each vendor\'s current pricing.';
+ }
+ ['sv-loads','sv-tms','sv-users','sv-plan','sv-rate','sv-cost'].forEach(function(id){
+  $(id).addEventListener('input',function(){calc();if(!used&&typeof gtag==='function'){used=true;gtag('event','calculator_use',{tool:'tms_cost',transport_type:'beacon'});}});
+  $(id).addEventListener('change',calc);
+ });
+ calc();
+})();
+</script>
+
+<p class="cmp-note" style="margin-top:26px">Estimates for planning, not a quote. BrokersEdge pricing is $150, $400 or $950 a month for 50, 150 or 400 loads, with overage of $3.00, $2.50 or $2.00 per load, and the calculator picks the cheapest plan for your volume. AscendTMS prices are per user per month from its plan page, seen November 9, 2026. Alvys advertises per-load pricing starting at $3.95 on <a href="https://alvys.com/pricing" rel="nofollow noopener">its pricing page</a>. Vendors change prices, so confirm before you decide. Your numbers stay in your browser.</p>
+</div></section>
+<section class="section-pad "><div class="container"><h2 class="cmp-h">What the number leaves out</h2><div class="cmp-grid"><div class="cmp-card"><h3>Seats grow, loads do not</h3><p>Per-user pricing rises with every dispatcher or agent you add. BrokersEdge prices by load volume, so adding a teammate does not change your bill.</p></div><div class="cmp-card"><h3>Add-ons and tiers</h3><p>Tracking, accounting and EDI can sit on higher plans or cost extra elsewhere. On BrokersEdge every feature is on every plan.</p></div><div class="cmp-card"><h3>Switching cost</h3><p>Send us your carriers, customers and open loads and <a href="/switch/">we load them in for you</a>, so the move takes days, not weeks.</p></div></div></div></section>
+    </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="/assets/brokersedge-logo-wide-clear.png" alt="BrokersEdge TMS logo" />
+        <p>The all-in-one TMS built for freight brokerages and carrier-friendly operations.</p>
+      </div>
+      <div><h4>Platform</h4><a href="/#why">Why Us</a><a href="/#tour">Product Tour</a><a href="/#pricing">Pricing</a></div>
+      <div><h4>Compare</h4><a href="/brokerage-carrier-tms/">Brokerage + Carrier TMS</a><a href="/vs/aljex/">vs Aljex</a><a href="/vs/alvys/">vs Alvys</a><a href="/vs/ascend/">vs Ascend</a><a href="/vs/tai-tms/">vs Tai TMS</a><a href="/vs/rose-rocket/">vs Rose Rocket</a><a href="/vs/turvo/">vs Turvo</a><a href="/guides/tms-pricing/">TMS Pricing Guide</a></div>
+      <div><h4>Company</h4><a href="/#contact">Request Demo</a><a href="/">Home</a></div>
+    </div>
+  </footer>
+  <script src="/script.js"></script>
+<script>
+/* CTA click tracking -> GA4 events (trial_cta_click, login_click) */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href]'); if(!a||typeof gtag!=='function')return;
+  var h=a.getAttribute('href')||'', n='';
+  if(h.indexOf('app.brokersedgetms.com/signup')>-1)n='trial_cta_click';
+  else if(h.indexOf('app.brokersedgetms.com/login')>-1)n='login_click';
+  if(!n)return;
+  gtag('event',n,{link_text:(a.textContent||'').trim().slice(0,60),page_path:location.pathname,transport_type:'beacon'});
+},true);
+</script>
+</body>
+</html>
