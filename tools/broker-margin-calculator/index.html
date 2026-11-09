@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Freight Broker Margin Calculator | BrokersEdge TMS</title>
+  <meta name="description" content="Free freight broker margin calculator. Enter your customer rate and carrier cost to see profit per load, margin %, monthly profit and what your TMS really costs you. No signup." />
+  <link rel="canonical" href="https://www.brokersedgetms.com/tools/broker-margin-calculator/" />
+  <link rel="icon" type="image/png" href="/assets/brokersedge-logo-mark.png" />
+  <link rel="apple-touch-icon" href="/assets/brokersedge-logo-mark.png" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BrokersEdge TMS" />
+  <meta property="og:title" content="Free Freight Broker Margin Calculator | BrokersEdge TMS" />
+  <meta property="og:description" content="Free freight broker margin calculator. Enter your customer rate and carrier cost to see profit per load, margin %, monthly profit and what your TMS really costs you. No signup." />
+  <meta property="og:url" content="https://www.brokersedgetms.com/tools/broker-margin-calculator/" />
+  <meta property="og:image" content="https://www.brokersedgetms.com/assets/new-dashboard.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free Freight Broker Margin Calculator | BrokersEdge TMS" />
+  <meta name="twitter:description" content="Free freight broker margin calculator. Enter your customer rate and carrier cost to see profit per load, margin %, monthly profit and what your TMS really costs you. No signup." />
+  <meta name="twitter:image" content="https://www.brokersedgetms.com/assets/new-dashboard.png" />
+
+  <link rel="stylesheet" href="/styles.css" />
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B9E0DRJ74R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B9E0DRJ74R');
+</script>
+</head>
+<body>
+  <header class="site-header" id="top">
+    <nav class="nav-shell">
+      <a class="brand" href="/" aria-label="BrokersEdge TMS home">
+        <img src="/assets/brokersedge-logo-wide-clear.png" alt="BrokersEdge TMS logo" />
+      </a>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="nav-links" data-nav>
+        <a href="/#why">Why Us</a>
+        <a href="/#tour">Product Tour</a>
+        <a href="/resources/">Resources</a>
+        <a href="/#contact">Contact</a>
+        <a class="login" href="https://app.brokersedgetms.com/login">Log in</a>
+        <a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-pad"><div class="hero-bg"></div>
+      <div class="container center-copy" style="max-width:860px">
+        <p class="eyebrow">Free tool · no signup</p>
+        <h1 style="font-size:clamp(30px,4.4vw,50px)">Freight broker margin calculator</h1>
+        <p class="hero-text">Enter a load's customer rate and carrier cost to see your real profit per load, your margin, and what a month of loads is worth after factoring costs and your TMS.</p>
+      </div></section>
+<section class="section-pad light"><div class="container" style="max-width:980px">
+<style>
+.mc{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:760px){.mc{grid-template-columns:1fr}}
+.mc label{display:block;font-weight:600;font-size:14px;margin:14px 0 6px;color:#0b0f14}
+.mc input{width:100%;padding:11px 12px;border:1px solid #cdd6df;border-radius:8px;font-size:16px;background:#fff;color:#0b0f14}
+.mc small{display:block;color:#5b6b7a;font-size:12px;margin-top:4px}
+.mc-out{background:#0b0f14;color:#fff;border-radius:14px;padding:24px}
+.mc-out h3{margin:0 0 14px;font-size:15px;color:#7ee7ff;letter-spacing:.04em;text-transform:uppercase}
+.mc-row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:15px}
+.mc-row b{font-size:17px}
+.mc-big{font-size:34px;font-weight:800;color:#00b4d8;margin:14px 0 2px}
+.mc-note{font-size:13px;color:#9fb0c0;margin-top:14px}
+</style>
+<div class="mc">
+ <div>
+  <h2 class="cmp-h" style="margin-bottom:6px">Your load</h2>
+  <label for="rev">Customer rate (what you bill)</label><input id="rev" type="number" min="0" step="any" value="2500" inputmode="decimal" />
+  <label for="cost">Carrier cost (linehaul plus accessorials you pay)</label><input id="cost" type="number" min="0" step="any" value="2100" inputmode="decimal" />
+  <label for="other">Other costs per load</label><input id="other" type="number" min="0" step="any" value="0" inputmode="decimal" /><small>Insurance, tracking fees, reimbursed lumper, and similar.</small>
+  <label for="fac">Quick-pay or factoring fee you cover (%)</label><input id="fac" type="number" min="0" step="any" value="0" inputmode="decimal" /><small>Percent of the carrier cost. Leave 0 if the carrier pays it.</small>
+  <h2 class="cmp-h" style="margin:26px 0 6px">Your month</h2>
+  <label for="loads">Loads per month</label><input id="loads" type="number" min="0" step="1" value="60" inputmode="numeric" />
+  <label for="tms">What you pay for your TMS each month</label><input id="tms" type="number" min="0" step="any" value="500" inputmode="decimal" /><small>Add up every seat, add-on and accounting tool.</small>
+ </div>
+ <div class="mc-out" aria-live="polite">
+  <h3>Per load</h3>
+  <div class="mc-row"><span>Gross profit</span><b id="gp">-</b></div>
+  <div class="mc-row"><span>Margin</span><b id="gm">-</b></div>
+  <div class="mc-row"><span>Markup on carrier cost</span><b id="mk">-</b></div>
+  <h3 style="margin-top:22px">Per month</h3>
+  <div class="mc-row"><span>Gross profit</span><b id="mgp">-</b></div>
+  <div class="mc-row"><span>After your TMS</span><b id="net">-</b></div>
+  <div class="mc-row"><span>TMS cost per load</span><b id="tpl">-</b></div>
+  <div class="mc-big" id="save">-</div>
+  <div id="savetxt" style="font-size:14px">&nbsp;</div>
+  <p class="mc-note" id="plan"></p>
+  <p style="margin-top:18px"><a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start 30-Day Free Trial</a></p>
+ </div>
+</div>
+<p class="cmp-note" style="margin-top:28px">This calculator is an estimate for planning, not accounting or financial advice. BrokersEdge pricing is $150, $400 or $950 a month for 50, 150 or 400 loads, with overage of $3.00, $2.50 or $2.00 per load, and every feature included. See <a href="/#pricing">current pricing</a>. Your numbers stay in your browser and are never sent anywhere.</p>
+</div></section>
+<section class="section-pad "><div class="container"><h2 class="cmp-h">How to read the result</h2><div class="cmp-grid"><div class="cmp-card"><h3>Margin vs markup</h3><p>Margin is profit divided by what you bill. Markup is profit divided by what you pay the carrier. Most brokers quote in margin, so compare that number first.</p></div><div class="cmp-card"><h3>Count your TMS per load</h3><p>A tool that charges per seat gets more expensive as you add dispatchers, even if your load count stays flat. Cost per load shows what it takes out of each deal.</p></div><div class="cmp-card"><h3>Test it on real freight</h3><p>Moving from another system? Send us your carriers, customers and open loads and <a href="/switch/">we load them in for you</a>.</p></div></div></div></section>
+<script>
+(function(){
+ function n(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)&&v>0?v:0}
+ function $(v){return (v<0?'-':'')+'$'+Math.abs(v).toLocaleString('en-US',{maximumFractionDigits:0})}
+ function $2(v){return (v<0?'-':'')+'$'+Math.abs(v).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
+ function plan(loads){
+  if(loads<=0)return {name:'',cost:0};
+  if(loads<=50)return {name:'the 50-load plan',cost:150};
+  if(loads<=150)return {name:'the 150-load plan',cost:400};
+  if(loads<=400)return {name:'the 400-load plan',cost:950};
+  return {name:'the 400-load plan plus $2.00 per extra load',cost:950+(loads-400)*2};
+ }
+ function calc(){
+  var rev=n('rev'),cost=n('cost'),other=n('other'),fac=n('fac'),loads=n('loads'),tms=n('tms');
+  var gp=rev-cost-other-cost*fac/100;
+  var gm=rev>0?gp/rev*100:0;
+  var mk=cost>0?gp/cost*100:0;
+  var mgp=gp*loads, net=mgp-tms;
+  document.getElementById('gp').textContent=$2(gp);
+  document.getElementById('gm').textContent=gm.toFixed(1)+'%';
+  document.getElementById('mk').textContent=mk.toFixed(1)+'%';
+  document.getElementById('mgp').textContent=$(mgp);
+  document.getElementById('net').textContent=$(net);
+  document.getElementById('tpl').textContent=loads>0?$2(tms/loads):'-';
+  var p=plan(loads), save=tms-p.cost;
+  var big=document.getElementById('save'),txt=document.getElementById('savetxt'),pl=document.getElementById('plan');
+  if(loads>0&&tms>0){
+    if(save>0){big.textContent=$(save)+' / month';txt.textContent='less than you pay now at your volume ('+$(save*12)+' a year).';}
+    else{big.textContent='Already competitive';txt.textContent='Your current TMS cost is at or below BrokersEdge at this volume. Compare features and support.';}
+    pl.textContent='BrokersEdge at '+loads+' loads a month: '+p.name+', '+$(p.cost)+' a month with every feature included.';
+  } else {big.textContent='-';txt.innerHTML='&nbsp;';pl.textContent='';}
+ }
+ var used=false;
+ ['rev','cost','other','fac','loads','tms'].forEach(function(id){
+  document.getElementById(id).addEventListener('input',function(){
+   calc();
+   if(!used&&typeof gtag==='function'){used=true;gtag('event','calculator_use',{tool:'broker_margin',transport_type:'beacon'});}
+  });
+ });
+ calc();
+})();
+</script>
+</main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="/assets/brokersedge-logo-wide-clear.png" alt="BrokersEdge TMS logo" />
+        <p>The all-in-one TMS built for freight brokerages and carrier-friendly operations.</p>
+      </div>
+      <div><h4>Platform</h4><a href="/#why">Why Us</a><a href="/#tour">Product Tour</a><a href="/#pricing">Pricing</a></div>
+      <div><h4>Compare</h4><a href="/brokerage-carrier-tms/">Brokerage + Carrier TMS</a><a href="/vs/aljex/">vs Aljex</a><a href="/vs/alvys/">vs Alvys</a><a href="/vs/ascend/">vs Ascend</a><a href="/vs/tai-tms/">vs Tai TMS</a><a href="/vs/rose-rocket/">vs Rose Rocket</a><a href="/vs/turvo/">vs Turvo</a><a href="/guides/tms-pricing/">TMS Pricing Guide</a></div>
+      <div><h4>Company</h4><a href="/#contact">Request Demo</a><a href="/">Home</a></div>
+    </div>
+  </footer>
+  <script src="/script.js"></script>
+<script>
+/* CTA click tracking -> GA4 events (trial_cta_click, login_click) */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href]'); if(!a||typeof gtag!=='function')return;
+  var h=a.getAttribute('href')||'', n='';
+  if(h.indexOf('app.brokersedgetms.com/signup')>-1)n='trial_cta_click';
+  else if(h.indexOf('app.brokersedgetms.com/login')>-1)n='login_click';
+  if(!n)return;
+  gtag('event',n,{link_text:(a.textContent||'').trim().slice(0,60),page_path:location.pathname,transport_type:'beacon'});
+},true);
+</script>
+</body>
+</html>
