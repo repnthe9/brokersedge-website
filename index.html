@@ -69,6 +69,7 @@
         <a href="#start">How It Works</a>
         <a href="#pricing">Pricing</a>
         <a href="/resources/">Resources</a>
+        <a href="/tools/broker-margin-calculator/">Free Calculator</a>
         <a href="#contact">Contact</a>
         <a class="login" href="https://app.brokersedgetms.com/login">Log in</a>
         <a class="btn btn-primary" href="https://app.brokersedgetms.com/signup">Start Free Trial</a>
@@ -111,6 +112,39 @@
     </section>
 
     <!-- PROBLEM / SOLUTION -->
+
+    <section class="section-pad light" id="calculator">
+      <div class="container" style="max-width:980px">
+        <p class="eyebrow" style="text-align:center">Free tool · no signup</p>
+        <h2 style="text-align:center;margin:6px 0 10px">What's your real margin on a load?</h2>
+        <p style="text-align:center;max-width:620px;margin:0 auto 26px">Plug in a customer rate and carrier cost. Get profit and margin instantly, then open the full calculator to see what your TMS is costing you per load.</p>
+        <style>
+        .mini{display:grid;grid-template-columns:1fr 1fr 1.2fr;gap:18px;align-items:end;background:#fff;border:1px solid #dbe3ea;border-radius:14px;padding:22px}
+        @media(max-width:760px){.mini{grid-template-columns:1fr}}
+        .mini label{display:block;font-weight:600;font-size:14px;margin-bottom:6px;color:#0b0f14}
+        .mini input{width:100%;padding:11px 12px;border:1px solid #cdd6df;border-radius:8px;font-size:16px;color:#0b0f14;background:#fff}
+        .mini-out{background:#0b0f14;color:#fff;border-radius:12px;padding:14px 18px}
+        .mini-out b{font-size:26px;color:#00b4d8;display:block}
+        .mini-out span{font-size:13px;color:#9fb0c0}
+        </style>
+        <div class="mini">
+          <div><label for="mrev">Customer rate ($)</label><input id="mrev" type="number" min="0" step="any" value="2500" inputmode="decimal" /></div>
+          <div><label for="mcost">Carrier cost ($)</label><input id="mcost" type="number" min="0" step="any" value="2100" inputmode="decimal" /></div>
+          <div class="mini-out" aria-live="polite"><b id="mgp">$400</b><span id="mgm">16.0% margin</span></div>
+        </div>
+        <p style="text-align:center;margin-top:22px"><a class="btn btn-primary" href="/tools/broker-margin-calculator/" data-calc-cta>Open the full calculator →</a></p>
+        <script>
+        (function(){
+          var r=document.getElementById('mrev'),c=document.getElementById('mcost'),gp=document.getElementById('mgp'),gm=document.getElementById('mgm'),used=false;
+          function f(v){return (v<0?'-':'')+'$'+Math.abs(v).toLocaleString('en-US',{maximumFractionDigits:0})}
+          function calc(){var a=parseFloat(r.value)||0,b=parseFloat(c.value)||0,p=a-b;gp.textContent=f(p);gm.textContent=(a>0?(p/a*100).toFixed(1):'0.0')+'% margin';}
+          [r,c].forEach(function(e){e.addEventListener('input',function(){calc();if(!used&&typeof gtag==='function'){used=true;gtag('event','calculator_use',{tool:'home_mini',transport_type:'beacon'});}})});
+          calc();
+        })();
+        </script>
+      </div>
+    </section>
+
     <section class="section-pad stack" id="why">
       <div class="container center-copy">
         <p class="eyebrow reveal">Why brokers switch</p>
