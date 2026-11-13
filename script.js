@@ -105,7 +105,6 @@ if (sp && pg) {
 // Falls back to the standard prices already in the HTML if the call fails,
 // and switches back automatically once all founding spots are taken.
 (function(){
-  const banner=document.getElementById('foundingBanner'); if(!banner) return;
   fetch('https://app.brokersedgetms.com/api/pricing/plans').then(r=>r.json()).then(d=>{
     if(!d||!d.founding||!d.founding.open) return;
     const plans={}; (d.plans||[]).forEach(p=>{ if(p.is_founding) plans[p.plan_family]=p; });
@@ -114,8 +113,6 @@ if (sp && pg) {
       const price=r.querySelector('.rg-price'); if(!price) return;
       price.innerHTML='<s style="opacity:.55;font-size:.6em;font-weight:600;margin-right:6px">$'+Math.round(p.standard_price)+'</s>$'+Math.round(p.base_price)+'<small>/mo</small>';
     });
-    banner.hidden=false;
-    banner.innerHTML='<b>Founding-member pricing: 50% off.</b> <span>'+d.founding.remaining+' of '+d.founding.cap+' spots left. Your price is locked in for as long as you stay subscribed.</span>';
     const f=document.getElementById('faqFounding'); if(f) f.hidden=false;
     const a=document.getElementById('faqStarterAnswer'); const st=plans.starter;
     if(a&&st) a.textContent='No. The Starter plan covers 50 loads a month for $'+Math.round(st.base_price)+' with founding-member pricing (regularly $'+Math.round(st.standard_price)+'), with every feature included. Extra loads are $3 each, and you move up only when you grow.';
