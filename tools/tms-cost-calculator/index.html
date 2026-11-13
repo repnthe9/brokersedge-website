@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TMS Cost Calculator: What Are You Really Paying? | BrokersEdge TMS</title>
-  <meta name="description" content="Free TMS cost calculator. Enter your monthly loads and current system (AscendTMS, Alvys or other) to see what you would pay on BrokersEdge. No signup." />
+  <meta name="description" content="Free TMS cost calculator. Enter your monthly loads and current system (Alvys or other) to see what you would pay on BrokersEdge. No signup." />
   <link rel="canonical" href="https://www.brokersedgetms.com/tools/tms-cost-calculator/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -15,13 +15,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="BrokersEdge TMS" />
   <meta property="og:title" content="TMS Cost Calculator: What Are You Really Paying? | BrokersEdge TMS" />
-  <meta property="og:description" content="Free TMS cost calculator. Enter your monthly loads and current system (AscendTMS, Alvys or other) to see what you would pay on BrokersEdge. No signup." />
+  <meta property="og:description" content="Free TMS cost calculator. Enter your monthly loads and current system (Alvys or other) to see what you would pay on BrokersEdge. No signup." />
   <meta property="og:url" content="https://www.brokersedgetms.com/tools/tms-cost-calculator/" />
   <meta property="og:image" content="https://www.brokersedgetms.com/assets/new-dashboard.png" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="TMS Cost Calculator: What Are You Really Paying? | BrokersEdge TMS" />
-  <meta name="twitter:description" content="Free TMS cost calculator. Enter your monthly loads and current system (AscendTMS, Alvys or other) to see what you would pay on BrokersEdge. No signup." />
+  <meta name="twitter:description" content="Free TMS cost calculator. Enter your monthly loads and current system (Alvys or other) to see what you would pay on BrokersEdge. No signup." />
   <meta name="twitter:image" content="https://www.brokersedgetms.com/assets/new-dashboard.png" />
 
   <link rel="stylesheet" href="/styles.css" />
@@ -87,18 +87,10 @@
   <input id="sv-loads" type="number" min="0" step="1" value="100" inputmode="numeric" />
   <label for="sv-tms">Your current TMS</label>
   <select id="sv-tms">
-    <option value="ascend">AscendTMS (per user)</option>
     <option value="alvys">Alvys (per load)</option>
     <option value="other">Another system (enter your cost)</option>
   </select>
-  <div id="sv-ascend">
-    <div class="sv-row2">
-      <div><label for="sv-users">Users</label><input id="sv-users" type="number" min="1" step="1" value="3" inputmode="numeric" /></div>
-      <div><label for="sv-plan">Ascend plan</label><select id="sv-plan"><option value="69">Basic · $69/user</option><option value="119" selected>Premium · $119/user</option><option value="149">Pro · $149/user</option></select></div>
-    </div>
-    <small>Ascend lists tracking and accounting under Premium, and e-signatures and bulk actions under Pro. Prices per user per month from Ascend's plan page, seen Nov 9, 2026.</small>
-  </div>
-  <div id="sv-alvys" class="sv-hide">
+  <div id="sv-alvys">
     <label for="sv-rate">Your price per load ($)</label>
     <input id="sv-rate" type="number" min="0" step="any" value="3.95" inputmode="decimal" />
     <small>Alvys advertises per-load pricing starting at $3.95 and quotes by volume. Enter your actual rate if you know it. Native EDI and some add-ons cost extra.</small>
@@ -111,7 +103,7 @@
  </div>
  <div class="sv-out" aria-live="polite">
   <h3>Your monthly cost</h3>
-  <div class="sv-line"><span id="sv-cur-name">AscendTMS</span><b id="sv-cur">-</b></div>
+  <div class="sv-line"><span id="sv-cur-name">Alvys (at your rate)</span><b id="sv-cur">-</b></div>
   <div class="sv-line"><span>BrokersEdge</span><b id="sv-be">-</b></div>
   <div class="sv-line"><span>Per load, now vs BrokersEdge</span><b id="sv-pl">-</b></div>
   <div class="sv-big" id="sv-save">-</div>
@@ -136,11 +128,9 @@
  var used=false;
  function calc(){
   var loads=num('sv-loads'),t=$('sv-tms').value,cur=0,name='';
-  $('sv-ascend').className=t==='ascend'?'':'sv-hide';
   $('sv-alvys').className=t==='alvys'?'':'sv-hide';
   $('sv-other').className=t==='other'?'':'sv-hide';
-  if(t==='ascend'){cur=Math.max(1,num('sv-users'))*num('sv-plan');name='AscendTMS';}
-  else if(t==='alvys'){cur=loads*num('sv-rate');name='Alvys (at your rate)';}
+  if(t==='alvys'){cur=loads*num('sv-rate');name='Alvys (at your rate)';}
   else{cur=num('sv-cost');name='Your current TMS';}
   var b=be(loads),cost=loads>0?b.cost:0;
   $('sv-cur-name').textContent=name;
@@ -154,7 +144,7 @@
   var ov=Math.max(0,loads-b.n);
   note.textContent='BrokersEdge estimate: the '+b.n+'-load plan at '+usd(b.base)+(ov>0?' plus '+ov+' extra loads at '+usd2(b.over):'')+', every feature included. Estimates only; confirm each vendor\'s current pricing.';
  }
- ['sv-loads','sv-tms','sv-users','sv-plan','sv-rate','sv-cost'].forEach(function(id){
+ ['sv-loads','sv-tms','sv-rate','sv-cost'].forEach(function(id){
   $(id).addEventListener('input',function(){calc();if(!used&&typeof gtag==='function'){used=true;gtag('event','calculator_use',{tool:'tms_cost',transport_type:'beacon'});}});
   $(id).addEventListener('change',calc);
  });
