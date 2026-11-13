@@ -403,3 +403,7 @@ h1,h2,h3{letter-spacing:-.035em}
 .drv-list li{padding:14px 18px;background:#121923;border-left:5px solid #00b4d8;border-radius:4px;color:#cfe0f2;line-height:1.55}
 .drv-list li b{color:#fff}
 @media(max-width:900px){.driver-grid{grid-template-columns:1fr;gap:40px}}
+
+.founding-banner{margin:22px 0 4px;background:#fff8e8;color:#7a4a00;border:2px solid #111;border-radius:6px;box-shadow:6px 6px 0 var(--amber);padding:16px 22px;font-weight:600;line-height:1.5}
+.founding-banner[hidden]{display:none}
+.founding-banner b{color:#111;font-size:18px;margin-right:6px}
